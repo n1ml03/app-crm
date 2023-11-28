@@ -5,7 +5,7 @@ import { Space, Tooltip } from "antd";
 
 import { User } from "@/interfaces";
 
-import { CustomAvatar } from "../custom-avatar";
+import { CustomAvatar } from "@/components";
 
 type Props = {
     userOne: Pick<User, "id" | "name" | "avatarUrl">;

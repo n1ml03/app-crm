@@ -1,16 +1,16 @@
-import { FC, useState } from "react";
-import { useHits, useSearchBox } from "react-instantsearch";
-import { Link } from "react-router-dom";
+import {FC, useState} from "react";
+import {useHits, useSearchBox} from "react-instantsearch";
+import {Link} from "react-router-dom";
 
-import { useNavigation, useResource } from "@refinedev/core";
+import {useNavigation, useResource} from "@refinedev/core";
 
-import { SearchOutlined } from "@ant-design/icons";
-import { Input, List, Popover, Tag, Typography } from "antd";
+import {SearchOutlined} from "@ant-design/icons";
+import {Input, List, Popover, Tag, Typography} from "antd";
 import cn from "classnames";
 
-import { Company, Contact, Deal, Event, Quote, Task, User } from "@/interfaces";
+import {Company, Contact, Deal, Event, Quote, Task, User} from "@/interfaces";
 
-import { CustomAvatar } from "../../custom-avatar";
+import {CustomAvatar} from "@/components";
 
 import styles from "./index.module.css";
 
@@ -116,8 +116,7 @@ export const AlgoliaSearchResult: FC<SearchResultProps> = ({ onHitClick }) => {
     };
 
     const getResourceLabel = (resource: string) => {
-        const label = select(resource).resource.meta?.label ?? resource;
-        return label;
+        return select(resource).resource.meta?.label ?? resource;
     };
 
     const getResourceLink = (item: Hit) => {
@@ -131,7 +130,6 @@ export const AlgoliaSearchResult: FC<SearchResultProps> = ({ onHitClick }) => {
 
         return "";
     };
-
     return (
         <List
             className={styles.list}

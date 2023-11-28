@@ -2,7 +2,6 @@ import type { IResourceItem } from "@refinedev/core";
 
 import {
     CalendarOutlined,
-    ContainerOutlined,
     CrownOutlined,
     DashboardOutlined,
     ProjectOutlined,
@@ -58,34 +57,6 @@ export const resources: IResourceItem[] = [
         },
     },
     {
-        name: "deals",
-        list: "/scrumboard/sales",
-        create: "/scrumboard/sales/create",
-        edit: "/scrumboard/sales/edit/:id",
-        meta: {
-            label: "Sales Pipeline",
-            parent: "scrumboard",
-        },
-    },
-    {
-        name: "dealStages",
-        create: "/scrumboard/sales/stages/create",
-        edit: "/scrumboard/sales/stages/edit/:id",
-        list: "/scrumboard/sales",
-        meta: {
-            hide: true,
-        },
-    },
-    {
-        name: "deals",
-        identifier: "deals-2",
-        edit: "/scrumboard/sales/details/edit/:id",
-        list: "/scrumboard/sales",
-        meta: {
-            hide: true,
-        },
-    },
-    {
         name: "companies",
         list: "/companies",
         show: "/companies/:id",
@@ -113,40 +84,6 @@ export const resources: IResourceItem[] = [
         meta: {
             label: "Contacts",
             icon: <TeamOutlined />,
-        },
-    },
-    {
-        name: "quotes",
-        list: "/quotes",
-        create: "/quotes/create",
-        edit: "/quotes/edit/:id",
-        show: "/quotes/show/:id",
-        meta: {
-            label: "Quotes",
-            icon: <ContainerOutlined />,
-        },
-    },
-    {
-        name: "administration",
-        meta: {
-            label: "Administration",
-            icon: <CrownOutlined />,
-        },
-    },
-    {
-        name: "settings",
-        list: "/administration/settings",
-        meta: {
-            label: "Settings",
-            parent: "administration",
-        },
-    },
-    {
-        name: "audits",
-        list: "/administration/audit-log",
-        meta: {
-            label: "Audit Log",
-            parent: "administration",
         },
     },
 ];

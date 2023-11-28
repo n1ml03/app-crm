@@ -7,7 +7,7 @@ import { Button, Popover } from "antd";
 
 import type { User } from "@/interfaces";
 
-import { CustomAvatar } from "../custom-avatar";
+import { CustomAvatar } from "@/components";
 import { Text } from "../text";
 import { AccountSettings } from "./account-settings";
 

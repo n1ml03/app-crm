@@ -26,8 +26,8 @@ import {
 import { TimezoneEnum } from "@/enums";
 import { User } from "@/interfaces";
 
-import { CustomAvatar } from "../../custom-avatar";
-import { SingleElementForm } from "../../single-element-form";
+import { CustomAvatar } from "@/components";
+import { SingleElementForm } from "@/components";
 import { Text } from "../../text";
 
 import styles from "./index.module.css";

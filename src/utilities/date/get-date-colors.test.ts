@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { getDateColor } from "./get-date-colors";
+import { getDateColor } from "@/utilities";
 
 describe("getDateColors function", () => {
     it("should return 'error' if the date is before today", () => {

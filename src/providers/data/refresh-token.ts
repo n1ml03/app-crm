@@ -1,8 +1,8 @@
-import { gql, request } from "@refinedev/nestjs-query";
+import {gql, request} from "@refinedev/nestjs-query";
 
-import { AxiosResponse } from "axios";
+import {AxiosResponse} from "axios";
 
-const mutationRefrehToken = gql`
+const mutationRefreshToken = gql`
     mutation refreshToken($refreshToken: String!) {
         refreshToken(refreshToken: $refreshToken) {
             accessToken
@@ -18,12 +18,11 @@ export const shouldRefreshToken = (response: AxiosResponse) => {
     const currentRefreshToken = localStorage.getItem("refresh_token");
     if (!currentRefreshToken) return false;
 
-    const hasAuthenticationError = errors.some((error: any) => {
+    return errors.some((error: any) => {
         return error.extensions?.code === "UNAUTHENTICATED";
     });
-    if (!hasAuthenticationError) return false;
 
-    return true;
+
 };
 
 export const refreshTokens = async () => {
@@ -36,7 +35,7 @@ export const refreshTokens = async () => {
                 accessToken: string;
                 refreshToken: string;
             };
-        }>("https://api.crm.refine.dev/graphql", mutationRefrehToken, {
+        }>("https://api.crm.refine.dev/graphql", mutationRefreshToken, {
             refreshToken: currentRefreshToken,
         });
 

@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 
 import { Audit, Deal } from "@/interfaces";
 
-import { CustomAvatar } from "../custom-avatar";
+import { CustomAvatar } from "@/components";
 import { Text } from "../text";
 import { NotificationMessage } from "./notification-message";
 

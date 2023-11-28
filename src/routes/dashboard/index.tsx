@@ -6,11 +6,9 @@ import { CalendarUpcomingEvents } from "@/components";
 
 import {
     CompaniesMap,
-    DashboardDealsChart,
     DashboardLatestActivities,
     DashboardTasksChart,
     DashboardTotalCountCard,
-    DashboardTotalRevenueChart,
 } from "./components";
 
 export const DashboardPage: React.FC = () => {
@@ -27,35 +25,6 @@ export const DashboardPage: React.FC = () => {
                     <DashboardTotalCountCard resource="deals" />
                 </Col>
             </Row>
-
-            <Row
-                gutter={[32, 32]}
-                style={{
-                    marginTop: "32px",
-                }}
-            >
-                <Col
-                    xs={24}
-                    sm={24}
-                    xl={8}
-                    style={{
-                        height: "432px",
-                    }}
-                >
-                    <DashboardTotalRevenueChart />
-                </Col>
-                <Col
-                    xs={24}
-                    sm={24}
-                    xl={16}
-                    style={{
-                        height: "432px",
-                    }}
-                >
-                    <DashboardDealsChart />
-                </Col>
-            </Row>
-
             <Row
                 gutter={[32, 32]}
                 style={{

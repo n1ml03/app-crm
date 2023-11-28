@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 
 import type { Event } from "@/interfaces";
 
-import { Text } from "../../../text";
+import { Text } from "@/components";
 
 import styles from "../index.module.css";
 
