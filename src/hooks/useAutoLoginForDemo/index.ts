@@ -2,7 +2,7 @@ import { authProvider, emails } from "@/providers";
 import { useCallback, useEffect, useState } from "react";
 
 /**
- * This hook is used to automatically login the user.
+ * This hook is used to automatically log in the user.
  * We use this hook to skip the login page and demonstrate the application more quickly.
  */
 export const useAutoLoginForDemo = () => {

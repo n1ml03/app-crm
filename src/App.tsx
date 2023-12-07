@@ -14,6 +14,7 @@ import routerProvider, {
 import { ConfigProvider, App as AntdApp } from "antd";
 
 import "./utilities/init-dayjs";
+import "./main.css";
 
 import { resources, themeConfig } from "@/config";
 import {
@@ -60,9 +61,37 @@ import "@refinedev/antd/dist/reset.css";
 import "./styles/antd.css";
 import "./styles/fc.css";
 import "./styles/index.css";
+import axios, {AxiosRequestConfig} from "axios";
+import React from "react";
+import {About, Blogs, Booking, Contact, HeartHealth, Home, Hospitals, Service} from "./pages";
+import {Testimonials} from "@/pages/Testimonials";
+import {
+    Gastroenterology,
+    GeneralMedicine,
+    Neurology,
+    Oncology,
+    Ophthalmology,
+    Orthopedic, Pathology,
+    Pediatric, PlasticSurgeons, Pulmonology, Nutrition, Cardiology
+} from "@/pages/services";
+
+
+const axiosInstance = axios.create();
+axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
+    const token = localStorage.getItem("token");
+    if (request.headers) {
+        request.headers["Authorization"] = `Bearer ${token}`;
+    } else {
+        request.headers = {
+            Authorization: `Bearer ${token}`,
+        };
+    }
+
+    return request;
+});
 
 const App: React.FC = () => {
-    // This hook is used to automatically login the user.
+    // This hook is used to automatically log in the user.
     // We use this hook to skip the login page and demonstrate the application more quickly.
     const { loading } = useAutoLoginForDemo();
 
@@ -90,6 +119,28 @@ const App: React.FC = () => {
                                 }}
                             >
                                 <Routes>
+                                    <Route path="/home" element={<Home/>}/>
+                                    <Route path="/services" element={<Service/>}/>
+                                    <Route path="/booking" element={<Booking/>}/>
+                                    <Route path="/blogs" element={<Blogs/>}/>
+                                    <Route path="/contact" element={<Contact/>}/>
+                                    <Route path="/about" element={<About/>}/>
+                                    <Route path="/testimonials" element={<Testimonials/>}/>
+                                    <Route path="/hospitals" element={<Hospitals/>}/>
+                                    <Route path="/services/pediatric" element={<Pediatric/>}/>
+                                    <Route path="/services/cardiology" element={<Cardiology/>}/>
+                                    <Route path="/services/gastroenterology" element={<Gastroenterology/>}/>
+                                    <Route path="/services/generalmedicine" element={<GeneralMedicine/>}/>
+                                    <Route path="/services/neurology" element={<Neurology/>}/>
+                                    <Route path="/services/nutrition" element={<Nutrition/>}/>
+                                    <Route path="/services/oncology" element={<Oncology/>}/>
+                                    <Route path="/services/ophthalmology" element={<Ophthalmology/>}/>
+                                    <Route path="/services/orthopedic" element={<Orthopedic/>}/>
+                                    <Route path="/services/pathology" element={<Pathology/>}/>
+                                    <Route path="/services/plasticsurgeons" element={<PlasticSurgeons/>}/>
+                                    <Route path="/services/pulmonology" element={<Pulmonology/>}/>
+                                    <Route path="/blogs/hearthealth" element={<HeartHealth/>}/>
+
                                     <Route
                                         element={
                                             <Authenticated

@@ -12,3 +12,5 @@ export * from "./list-title-button";
 export * from "./pagination-total";
 export * from "./select-option-with-avatar";
 export * from "./text";
+export * from './BookSmalver';
+export {Footer} from './Footer';
