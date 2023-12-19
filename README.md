@@ -18,8 +18,4 @@ The application includes features such as dashboard analytics, a calendar for sc
 
 **Contacts**: Manage your customer contacts efficiently.
 
-**Quotes**: Generate and manage quotes for your clients.
-
-**Administration**: Configure application settings and user roles.
-
 
